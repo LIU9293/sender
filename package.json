@@ -36,6 +36,6 @@
     "eject": "react-app-rewired eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -o rstorm",
-    "grace": "export REACT_APP_PROXY_MULTISENDER=0x27D9974AE3FDcBcB78402dA73aED71749a84D78e"
+    "grace": "export REACT_APP_PROXY_MULTISENDER=0x27D9974AE3FDcBcB78402dA73aED71749a84D78e && yarn build"
   }
 }

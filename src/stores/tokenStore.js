@@ -218,6 +218,7 @@ class TokenStore {
 
   @computed get totalCostInEth(){
     const standardGasPrice = Web3Utils.toWei(this.gasPriceStore.selectedGasPrice.toString(), 'gwei');
+    console.log('current fee', this.currentFee);
     const currentFeeInWei = Web3Utils.toWei(this.currentFee);
     const tx = new BN(standardGasPrice).times(new BN('5000000'))
     const txFeeMiners = tx.times(new BN(this.totalNumberTx))
