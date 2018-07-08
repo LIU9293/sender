@@ -11,19 +11,21 @@ let getWeb3 = () => {
         // Use Mist/MetaMask's provider.
         web3 = new window.Web3(web3.currentProvider)
         web3.version.getNetwork((err, netId) => {
-          let netIdName, trustApiName, explorerUrl;
+          let netIdName, trustApiName, explorerUrl, contractAddress = '';
           console.log('netId', netId);
           switch (netId) {
             case "1":
               netIdName = 'Foundation'
               trustApiName = 'api'
               explorerUrl = 'https://etherscan.io'
+              contractAddress = '0xf479c029ed8af4a6a23248ac826812cf7cbd4d2c'
               console.log('This is Foundation', netId)
               break;
             case "3":
               netIdName = 'Ropsten'
               trustApiName = 'ropsten'
               explorerUrl = 'https://ropsten.etherscan.io'
+              contractAddress = '0x27D9974AE3FDcBcB78402dA73aED71749a84D78e'
               console.log('This is Ropsten', netId)
               break;
             case "4":
@@ -66,7 +68,8 @@ let getWeb3 = () => {
             injectedWeb3: true,
             defaultAccount,
             trustApiName,
-            explorerUrl
+            explorerUrl,
+            contractAddress
           }
           resolve(results)
         })

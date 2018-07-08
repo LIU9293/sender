@@ -10,6 +10,7 @@ class Web3Store {
   @observable userTokens = [];
   @observable explorerUrl = '';
   @observable startedUrl = window.location.hash
+  @observable contractAddress = '';
   constructor(rootStore) {
     
     this.getWeb3Promise = getWeb3().then(async (web3Config) => {
@@ -18,11 +19,16 @@ class Web3Store {
       this.web3 = new Web3(web3Instance.currentProvider); 
       this.getUserTokens(web3Config)
       this.setExplorerUrl(web3Config.explorerUrl)
+      this.setContract(web3Config.contractAddress) 
       console.log('web3 loaded')
     }).catch((e) => {
       console.error(e,'web3 not loaded')
       this.errors.push(e.message)
     })
+  }
+  @action
+  setContract(add){
+    this.contractAddress = add
   }
   @action
   setExplorerUrl(url){

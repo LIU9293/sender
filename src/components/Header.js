@@ -8,6 +8,7 @@ export class Header extends React.Component {
   render() {
     const explorerUrl =
       this.props.UiStore.web3Store.explorerUrl || "https://etherscan.io";
+    const contractAddress = this.props.UiStore.web3Store.contractAddress || '';
     return (
       <header className="header">
         <div className="container">
@@ -21,11 +22,9 @@ export class Header extends React.Component {
               {"合约地址: "}
               <a
                 target="_blank"
-                href={`${explorerUrl}/address/${
-                  process.env.REACT_APP_PROXY_MULTISENDER
-                }`}
+                href={`${explorerUrl}/address/${contractAddress}`}
               >
-                {process.env.REACT_APP_PROXY_MULTISENDER}
+                {contractAddress}
               </a>
             </label>
           </form>
