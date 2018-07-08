@@ -11,7 +11,7 @@ export class Header extends React.Component {
     return (
       <header className="header">
         <div className="container">
-          <a href="#" className="header-logo" />
+          <div />
           <form className="form form_header">
             <label htmlFor="network" className="label">
               {"合约地址: "}

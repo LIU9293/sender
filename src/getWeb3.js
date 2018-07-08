@@ -54,7 +54,7 @@ let getWeb3 = () => {
               netIdName = 'Unknown'
               console.log('This is an unknown network.', netId)
           }
-          document.title = `${netIdName} - MultiSender dApp`
+          document.title = `${netIdName} - 智能合约批量发送`
           var defaultAccount = web3.eth.defaultAccount || null;
           if(defaultAccount === null){
             reject({message: 'Please unlock your metamask and refresh the page'})
