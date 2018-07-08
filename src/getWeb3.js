@@ -18,7 +18,7 @@ let getWeb3 = () => {
               netIdName = 'Foundation'
               trustApiName = 'api'
               explorerUrl = 'https://etherscan.io'
-              contractAddress = '0xf479c029ed8af4a6a23248ac826812cf7cbd4d2c'
+              contractAddress = '0xF479C029Ed8af4A6A23248ac826812CF7cbD4D2C'
               console.log('This is Foundation', netId)
               break;
             case "3":
